@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ede878d-68b5-4259-a2d5-0e0135f10640" name="Default" comment="" />
+    <list default="true" id="3ede878d-68b5-4259-a2d5-0e0135f10640" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwittBreizhBeansGrails.iws" afterPath="$PROJECT_DIR$/TwittBreizhBeansGrails.iws" />
+    </list>
     <ignored path="TwittBreizhBeansGrails.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -73,13 +75,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UserController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/twittbreizhbeansgrails/UserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="53" selection-start="385" selection-end="385" vertical-scroll-proportion="0.30124223">
+            <state line="14" column="53" selection-start="385" selection-end="385" vertical-scroll-proportion="-7.76">
               <folding>
                 <element signature="e#32#76#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.044843048">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,6 +120,7 @@
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/twittbreizhbeansgrails/UserController.groovy" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -610,10 +622,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/twittbreizhbeansgrails/UserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="53" selection-start="385" selection-end="385" vertical-scroll-proportion="0.30124223">
+        <state line="14" column="53" selection-start="385" selection-end="385" vertical-scroll-proportion="-7.76">
           <folding>
             <element signature="e#32#76#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.044843048">
+          <folding />
         </state>
       </provider>
     </entry>
