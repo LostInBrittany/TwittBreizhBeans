@@ -31,8 +31,19 @@ class TwittController {
 
     def post() {
 
-        if (!User.isUserOk(params)) {
-
+        if ((!User.isUserOk(params)) || (!Twitt.isTwittOk(params))) {
+            log.info("Wrong set of parameters: "+ params)
+            response.status = 401 //Forbidden
+            render(contentType:'text/json') {
+                [ message : "Wrong set of parameters: "+ params ]
+            }
+        }
+        def twitt = new Twitt(params)
+        twitt.date = new Date()
+        def result = twitt.save()
+        response.status = 200 //OK
+        render(contentType:'text/json') {
+            [ twitt : twitt ]
         }
     }
 

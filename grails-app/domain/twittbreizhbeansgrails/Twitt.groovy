@@ -13,4 +13,11 @@ class Twitt {
     String content
 
 
+    static def isTwittOk(params) {
+        if ((null == params.username) || (null == params.content)) {
+            return false
+        }
+        return true
+    }
+
 }

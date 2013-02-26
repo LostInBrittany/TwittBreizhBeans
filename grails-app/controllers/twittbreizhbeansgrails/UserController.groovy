@@ -30,7 +30,7 @@ class UserController {
 
         } else {
 
-            def userInstance =  getUserFromParams(params)
+            def userInstance =  User.getUserFromParams(params)
             userInstance.save()
             log.info("User '"+ params.get("username")+"' created")
             response.status = 200 //OK
@@ -41,8 +41,7 @@ class UserController {
     }
 
     def authenticate() {
-        def userInstance =  getUserFromParams(params)
-        if (User.isUserOk(userInstance)) {
+        if (User.isUserOk(params)) {
             log.info("User '"+ params.get("username")+"' authenticated")
             response.status = 200 //Ok
             render(contentType:'text/json') {
@@ -55,14 +54,5 @@ class UserController {
                 [ message : "Wrong username ('"+ params.get("username")+"') and/or password" ]
             }
         }
-    }
-
-    private def getUserFromParams(params) {
-        def userInstance = new User()
-        userInstance.username = params.get("username")
-        // We don't want the password, we want the hash !
-        userInstance.password = MessageDigest.getInstance("MD5").digest(params.get("password")
-                                                    .getBytes("UTF-8")).encodeHex().toString()
-        return userInstance
     }
 }
