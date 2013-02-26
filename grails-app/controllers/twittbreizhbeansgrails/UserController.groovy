@@ -1,7 +1,6 @@
 package twittbreizhbeansgrails
 
 import org.apache.commons.logging.LogFactory
-
 import java.security.MessageDigest
 
 class UserController {
@@ -43,15 +42,12 @@ class UserController {
 
     def authenticate() {
         def userInstance =  getUserFromParams(params)
-
         if (User.isUserOk(userInstance)) {
-
             log.info("User '"+ params.get("username")+"' authenticated")
             response.status = 200 //Ok
             render(contentType:'text/json') {
                 [ message : "User '"+ params.get("username")+"' authenticated" ]
             }
-
         }  else {
             log.info("User '"+ params.get("username")+"' doesn't exists")
             response.status = 401 //Unauthorized
@@ -59,7 +55,6 @@ class UserController {
                 [ message : "Wrong username ('"+ params.get("username")+"') and/or password" ]
             }
         }
-
     }
 
     private def getUserFromParams(params) {
