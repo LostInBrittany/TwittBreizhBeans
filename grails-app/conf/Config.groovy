@@ -77,7 +77,7 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
     appenders {
-        rollingFile name: "file", maxFileSize: 1024, file:'/tmp/TwittBreizhBeans.log'
+        rollingFile name: "file", maxFileSize: "1024k", file:'/tmp/TwittBreizhBeans.log'
     }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
@@ -92,7 +92,9 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 
-    debug   "grails.app"
+    info   'grails.app'
+
+    debug  'twittbreizhbeansgrails'
 
     root {
         info 'stdout', 'file'
