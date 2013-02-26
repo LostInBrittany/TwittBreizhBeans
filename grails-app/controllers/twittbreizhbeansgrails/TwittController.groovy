@@ -29,7 +29,12 @@ class TwittController {
 
     }
 
+    def post() {
 
+        if (!User.isUserOk(params)) {
+
+        }
+    }
 
     private def getMax(params) {
         def max = DEFAULT_MAX
@@ -44,4 +49,5 @@ class TwittController {
         }
         return max
     }
+
 }

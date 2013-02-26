@@ -44,17 +44,7 @@ class UserController {
     def authenticate() {
         def userInstance =  getUserFromParams(params)
 
-        def userOnBase = User.findByUsername(params.get("username"))
-
-        if (null == userOnBase) {
-
-            log.info("User '"+ params.get("username")+"' doesn't exists")
-            response.status = 401 //Unauthorized
-            render(contentType:'text/json') {
-                [ message : "User '"+ params.get("username")+"' doesn't exists" ]
-            }
-
-        } else if (userInstance.password.equals(userOnBase.password)) {
+        if (User.isUserOk(userInstance)) {
 
             log.info("User '"+ params.get("username")+"' authenticated")
             response.status = 200 //Ok
@@ -62,22 +52,22 @@ class UserController {
                 [ message : "User '"+ params.get("username")+"' authenticated" ]
             }
 
-        } else {
-
-            log.info("Password didn't match for user '"+ params.get("username")+"'")
+        }  else {
+            log.info("User '"+ params.get("username")+"' doesn't exists")
             response.status = 401 //Unauthorized
             render(contentType:'text/json') {
-                [ message : "Password didn't match for user '"+ params.get("username")+"'" ]
+                [ message : "Wrong username ('"+ params.get("username")+"') and/or password" ]
             }
-
         }
+
     }
 
     private def getUserFromParams(params) {
         def userInstance = new User()
         userInstance.username = params.get("username")
         // We don't want the password, we want the hash !
-        userInstance.password = MessageDigest.getInstance("MD5").digest(params.get("password").getBytes("UTF-8")).encodeHex().toString()
+        userInstance.password = MessageDigest.getInstance("MD5").digest(params.get("password")
+                                                    .getBytes("UTF-8")).encodeHex().toString()
         return userInstance
     }
 }
