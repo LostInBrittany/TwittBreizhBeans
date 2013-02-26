@@ -6,6 +6,7 @@ import java.security.MessageDigest
 
 class UserController {
 
+
     // Logger
     private static final log = LogFactory.getLog(this)
 
@@ -21,12 +22,22 @@ class UserController {
 
     def create() {
         if (User.findAllByUsername(params.get("username")).size() > 0) {
+
             log.info("User '"+ params.get("username")+"' already exists in base")
+            response.status = 403 //Forbidden
+            render(contentType:'text/json') {
+                [ message : "User '"+ params.get("username")+"' already exists in base" ]
+            }
+
         } else {
 
             def userInstance =  getUserFromParams(params)
             userInstance.save()
             log.info("User '"+ params.get("username")+"' created")
+            response.status = 200 //OK
+            render(contentType:'text/json') {
+                [ message : "User '"+ params.get("username")+"' created" ]
+            }
         }
     }
 
@@ -36,11 +47,29 @@ class UserController {
         def userOnBase = User.findByUsername(params.get("username"))
 
         if (null == userOnBase) {
+
             log.info("User '"+ params.get("username")+"' doesn't exists")
+            response.status = 401 //Unauthorized
+            render(contentType:'text/json') {
+                [ message : "User '"+ params.get("username")+"' doesn't exists" ]
+            }
+
         } else if (userInstance.password.equals(userOnBase.password)) {
+
             log.info("User '"+ params.get("username")+"' authenticated")
+            response.status = 200 //Ok
+            render(contentType:'text/json') {
+                [ message : "User '"+ params.get("username")+"' authenticated" ]
+            }
+
         } else {
-            log.info("Password didn't match for user '"+ params.get("username"))
+
+            log.info("Password didn't match for user '"+ params.get("username")+"'")
+            response.status = 401 //Unauthorized
+            render(contentType:'text/json') {
+                [ message : "Password didn't match for user '"+ params.get("username")+"'" ]
+            }
+
         }
     }
 

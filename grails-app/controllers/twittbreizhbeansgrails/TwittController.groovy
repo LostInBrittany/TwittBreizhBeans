@@ -11,15 +11,20 @@ class TwittController {
     // Logger
     private static final log = LogFactory.getLog(this)
 
-    def index() { }
+    private static defaultAction = "list"
 
 
     def list() {
         params.max = getMax(params)
 
-        def twitList = Twitt.list(sort: "date", order: "desc", max: params.max)
+        def twittList = Twitt.list(sort: "date", order: "desc", max: params.max)
 
-        log.debug(twitList)
+        log.debug(twittList)
+
+        response.status = 200 //OK
+        render(contentType:'text/json') {
+            [ list : twittList ]
+        }
 
 
     }
