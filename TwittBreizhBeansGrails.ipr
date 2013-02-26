@@ -33,6 +33,9 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
   <component name="IdProvider" IDEtalkID="CBA11A0AE427B762AF21403559482CB3" />
   <component name="Palette2">
     <group name="Swing">
@@ -158,6 +161,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TwittBreizhBeansGrails.iml" filepath="$PROJECT_DIR$/TwittBreizhBeansGrails.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TwittBreizhBeansGrails-grailsPlugins.iml" filepath="$PROJECT_DIR$/TwittBreizhBeansGrails-grailsPlugins.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
