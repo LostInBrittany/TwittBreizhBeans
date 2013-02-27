@@ -1,7 +1,13 @@
 <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
-    <h1>Twitt BreizhBeans</h1>
-    <p>Twitt BreizhBeans is a demo app made with AngularJS et MongoDB.</p>
+    <div class="container">
+        <h1>Twitt BreizhBeans</h1>
+        <p>A BreizhBeans demo app made with AngularJS, Grails and MongoDB.</p>
+        <div class="btn-signing">
+            <button ng-click="signing()" class="btn btn-primary">Join now</button> or
+            <button ng-click="signing()" class="btn btn-success">Sign in</button>
+        </div>
+    </div>
 </div>
 
 <div class="container">
@@ -28,12 +34,16 @@
     </form>
     -->
     <div class="twittBox">
+        <div class="twittBoxHeader"><h1>What's happening now?</h1></div>
         <div ng-repeat="aTwitt in twittList.list" class="twitt">
             <div class="date">{{aTwitt.date}}</div>
             <div class="username">{{aTwitt.username}}</div>
             <div class="content">{{aTwitt.content}}</div>
         </div>
     </div>
+</div>
 
+<div   ng-show="signformIsShown()">
+    <h1>Hello !</h1>
 
 </div>

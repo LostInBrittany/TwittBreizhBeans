@@ -30,17 +30,26 @@
 }
 
 
+
 .twittBox {
     border: 1px solid #aaaaaa;
     border-bottom:0px;
-    width: 760px;
+    max-width: 760px;
     margin: 0 auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.twittBox .twittBoxHeader {
+    border-bottom: 1px solid #aaaaaa;
+    padding: 5px;
+    text-align:center;
 }
 
 .twittBox .twitt {
     border-bottom: 1px solid #aaaaaa;
-    padding: 5px;
+    padding: 10px;
 }
+
 
 .twitt .date {
     float: right;
@@ -51,7 +60,39 @@
 .twitt .username {
     float: left;
     font-weight: bold;
+    color: #0088cc;
 }
 .twitt .content {
     clear:both;
+}
+
+@media (max-width: 550px) {
+    .hero-unit h1 {
+        font-size: 40px;
+    }
+    .hero-unit  {
+        font-size: 16px;
+        padding: 40px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .hero-unit {
+        text-align: center;
+    }
+    .btn-signing {
+        display:inline-block;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 680px) {
+    .hero-unit h1 {
+        font-size: 45px;
+    }
+}
+
+@media (min-width: 980px) {
+    .hero-unit  {
+        margin-top: 60px;
+    }
 }

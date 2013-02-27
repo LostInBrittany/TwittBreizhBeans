@@ -14,7 +14,16 @@ AboutCtrl.$inject = [];
 
 function  MainCtrl($scope, $location,TwittList, $timeout) {
 
+    $scope.showSingform = false;
 
+    $scope.signing = function() {
+        alert("Hola");
+        $scope.showSingform = true;
+    }
+
+    $scope.signformIsShown = function() {
+        return   $scope.showSingform
+    }
 
     $scope.reloadList = function() {
         $scope.twittList = TwittList.query()

@@ -9,36 +9,37 @@
 
         <!-- Le styles -->
         <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <style type="text/css">
-          body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-          }
-        </style>
-        <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
-            <link rel="stylesheet" href="css/app.css"/>
+        <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/app.css"/>
 	</head>
 	<body>
 
-
         <div ng-controller="PageCtrl"  ng-include="navbar.url"></div>
 
-        <div ng-view></div>
 
 
-        <!-- In production use:
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-        -->
-        <script src="lib/angular/angular.js"></script>
-        <script src="lib/angular/angular-resource.js"></script>
-        <script src="lib/jquery/jquery.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/services.js"></script>
-        <script src="js/controllers.js"></script>
-        <script src="js/filters.js"></script>
-        <script src="js/directives.js"></script>
-        <script src="js/grails.js"></script>
+
+
+
+            <div class="container" ng-view></div>
+
+
+            <!-- In production use:
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+            -->
+            <script src="lib/angular/angular.js"></script>
+            <script src="lib/angular/angular-resource.js"></script>
+            <script src="lib/jquery/jquery.js"></script>
+            <script src="lib/bootstrap/js/bootstrap.js"></script>
+            <script src="js/app.js"></script>
+            <script src="js/services.js"></script>
+            <script src="js/controllers.js"></script>
+            <script src="js/filters.js"></script>
+            <script src="js/directives.js"></script>
+            <script src="js/grails.js"></script>
+
+
+
 	</body>
 </html>

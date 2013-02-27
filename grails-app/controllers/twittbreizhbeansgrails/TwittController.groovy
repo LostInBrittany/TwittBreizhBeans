@@ -25,8 +25,6 @@ class TwittController {
         render(contentType:'text/json') {
             [ list : twittList ]
         }
-
-
     }
 
     def post() {
