@@ -14,15 +14,17 @@ AboutCtrl.$inject = [];
 
 function  MainCtrl($scope, $location,TwittList, $timeout) {
 
-    $scope.showSingform = false;
+    $scope.showSigningPanel = false;
 
     $scope.signing = function() {
-        alert("Hola");
-        $scope.showSingform = true;
+        $scope.showSigningPanel = true;
+    }
+    $scope.exitSigning = function() {
+        $scope.showSigningPanel = false;
     }
 
-    $scope.signformIsShown = function() {
-        return   $scope.showSingform
+    $scope.signingPanelIsShown = function() {
+        return   $scope.showSigningPanel
     }
 
     $scope.reloadList = function() {
