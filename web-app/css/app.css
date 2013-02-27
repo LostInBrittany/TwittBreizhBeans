@@ -28,3 +28,30 @@
   content: "";
   padding: 0;
 }
+
+
+.twittBox {
+    border: 1px solid #aaaaaa;
+    border-bottom:0px;
+    width: 760px;
+    margin: 0 auto;
+}
+
+.twittBox .twitt {
+    border-bottom: 1px solid #aaaaaa;
+    padding: 5px;
+}
+
+.twitt .date {
+    float: right;
+    font-size: 0.75em;
+    color: #aaaaaa;
+}
+
+.twitt .username {
+    float: left;
+    font-weight: bold;
+}
+.twitt .content {
+    clear:both;
+}

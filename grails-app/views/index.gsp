@@ -39,6 +39,6 @@
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
         <script src="js/directives.js"></script>
-        <script src="js/mongolab.js"></script>
+        <script src="js/grails.js"></script>
 	</body>
 </html>

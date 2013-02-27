@@ -6,6 +6,7 @@
 
 <div class="container">
 
+    <!--
     <form name="twittForm">
         <div class="control-group" ng-class="{error: twittForm.name.$invalid}">
             <label>User :</label>
@@ -25,4 +26,14 @@
                 ng-disabled="isClean() || twittForm.$invalid"
                 class="btn btn-primary">Save</button>
     </form>
+    -->
+    <div class="twittBox">
+        <div ng-repeat="aTwitt in twittList.list" class="twitt">
+            <div class="date">{{aTwitt.date}}</div>
+            <div class="username">{{aTwitt.username}}</div>
+            <div class="content">{{aTwitt.content}}</div>
+        </div>
+    </div>
+
+
 </div>

@@ -12,7 +12,16 @@ function AboutCtrl() {}
 AboutCtrl.$inject = [];
 
 
-function  MainCtrl($scope, $location,Twitt) {
+function  MainCtrl($scope, $location,TwittList, $timeout) {
+
+
+
+    $scope.reloadList = function() {
+        $scope.twittList = TwittList.query()
+        $timeout($scope.reloadList, 5000);
+    }
+    $scope.reloadList();
+    /*
 
     $scope.twitt = new Twitt();
 
@@ -27,7 +36,7 @@ function  MainCtrl($scope, $location,Twitt) {
         }
         return false;
     }
-
+    */
 }
-MainCtrl.$inject = ['$scope','$location','Twitt'];
+MainCtrl.$inject = ['$scope','$location','TwittList', $timeout];
 
