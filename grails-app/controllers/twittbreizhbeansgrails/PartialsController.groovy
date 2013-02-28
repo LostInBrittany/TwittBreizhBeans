@@ -4,6 +4,6 @@ class PartialsController {
 
     def about() {}
     def main() {}
-    def navbar() {}
+    def signing() {}
 
 }

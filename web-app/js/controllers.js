@@ -3,7 +3,8 @@
 /* Controllers */
 
 function PageCtrl($scope) {
-    $scope.navbar = { name: 'navbar.html', url: 'partials/navbar.html'};
+    $scope.navbar = { name: 'navbar', url: 'partials/navbar'};
+    $scope.herounit = { name: 'herounit', url: 'partials/herounit'};
 }
 // Injecting variables
 PageCtrl.$inject = ['$scope'];
@@ -11,8 +12,11 @@ PageCtrl.$inject = ['$scope'];
 function AboutCtrl() {}
 AboutCtrl.$inject = [];
 
+function SigningCtrl() {}
+SigningCtrl.$inject = [];
 
-function  MainCtrl($scope, $location,TwittList, $timeout) {
+
+function  MainCtrl($scope, $location,TwittList) {
 
     $scope.showSigningPanel = false;
 
@@ -27,11 +31,7 @@ function  MainCtrl($scope, $location,TwittList, $timeout) {
         return   $scope.showSigningPanel
     }
 
-    $scope.reloadList = function() {
-        $scope.twittList = TwittList.query()
-        $timeout($scope.reloadList, 5000);
-    }
-    $scope.reloadList();
+
     /*
 
     $scope.twitt = new Twitt();
@@ -49,5 +49,13 @@ function  MainCtrl($scope, $location,TwittList, $timeout) {
     }
     */
 }
-MainCtrl.$inject = ['$scope','$location','TwittList', $timeout];
+MainCtrl.$inject = ['$scope','$location','TwittList'];
 
+function  TwittboxCtrl($scope, $location,TwittList,$timeout) {
+    $scope.reloadList = function() {
+        $scope.twittList = TwittList.query();
+        $timeout($scope.reloadList, 5000);
+    }
+    $scope.reloadList();
+}
+TwittboxCtrl.$inject = ['$scope','$location','TwittList','$timeout'];

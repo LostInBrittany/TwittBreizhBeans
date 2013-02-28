@@ -15,16 +15,23 @@
 	</head>
 	<body>
 
+        <g:include view="partials/navbar.gsp" />
+        <!-- Using only angular it would means multiple file loading
         <div ng-controller="PageCtrl"  ng-include="navbar.url"></div>
+        -->
+
+            <div class="container">
 
 
+                <g:include view="partials/herounit.gsp" />
+                <!-- Using only angular it would means multiple file loading
+                <div ng-controller="PageCtrl"  ng-include="herounit.url"></div>
+                -->
+                <div ng-view></div>
 
+                <g:include view="partials/twittbox.gsp" />
 
-
-
-            <div class="container" ng-view></div>
-
-
+            </div>
             <!-- In production use:
             <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
             -->

@@ -30,6 +30,11 @@
 }
 
 
+.btn-signing {
+    text-align: center;
+    margin-top:-70px;
+    margin-bottom: 30px;
+}
 
 .twittBox {
     border: 1px solid #aaaaaa;
@@ -131,9 +136,6 @@
     }
     .hero-unit {
         text-align: center;
-    }
-    .btn-signing {
-        display:inline-block;
     }
     .signing-forms-panel form {
         max-width: 150px;

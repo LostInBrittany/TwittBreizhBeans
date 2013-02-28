@@ -61,7 +61,11 @@ grails.hibernate.cache.queries = false
 
 environments {
     development {
+        //Don't cache static resources on dev mode :
+        grails.resources.processing.enabled = false
+
         grails.logging.jul.usebridge = true
+
     }
     production {
         grails.logging.jul.usebridge = false
